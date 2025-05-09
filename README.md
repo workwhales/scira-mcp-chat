@@ -1,5 +1,5 @@
-<a href="https://mcp.scira.ai">
-  <h1 align="center">Scira MCP Chat</h1>
+<a href="https://goodboy.chat">
+  <h1 align="center">goodboy.chat</h1>
 </a>
 
 <p align="center">

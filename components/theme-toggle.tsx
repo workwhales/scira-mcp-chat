@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { CircleDashed, Flame, Sun } from "lucide-react"
+import { CircleDashed, Flame, Sun, Compass } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "./ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
@@ -42,6 +42,11 @@ export function ThemeToggle({ className, ...props }: React.ComponentProps<typeof
         <DropdownMenuItem onSelect={() => setTheme("sunset")}>
           <Sun className="mr-2 h-4 w-4" />
           <span>Sunset</span>
+        </DropdownMenuItem>
+        {/* nordic minimal theme */}
+        <DropdownMenuItem onSelect={() => setTheme("nordic-minimal")}>
+          <Compass className="mr-2 h-4 w-4" />
+          <span>Nordic Minimal</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

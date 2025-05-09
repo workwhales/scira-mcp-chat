@@ -32,7 +32,7 @@ export function Providers({ children }: { children: ReactNode }) {
         defaultTheme="system"
         enableSystem={true}
         disableTransitionOnChange
-        themes={["light", "dark", "sunset", "black"]}
+        themes={["light", "dark", "sunset", "black", "nordic-minimal"]}
       >
         <MCPProvider>
           <SidebarProvider defaultOpen={sidebarOpen} open={sidebarOpen} onOpenChange={setSidebarOpen}>

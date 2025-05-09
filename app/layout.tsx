@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans, IBM_Plex_Sans } from "next/font/google";
 import { ChatSidebar } from "@/components/chat-sidebar";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Menu } from "lucide-react";
@@ -7,18 +7,19 @@ import { Providers } from "./providers";
 import "./globals.css";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
+const noto = Noto_Sans({ subsets: ["latin"], weight: ["400","700"], display: "swap" });
+const ibmPlex = IBM_Plex_Sans({ subsets: ["cyrillic","greek","vietnamese"], weight: ["400","500","700"], display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mcp.scira.ai"),
-  title: "Scira MCP Chat",
-  description: "Scira MCP Chat is a minimalistic MCP client with a good feature set.",
+  metadataBase: new URL("https://goodboy.chat"),
+  title: "goodboy.chat",
+  description: "goodboy.chat is a minimalistic MCP client with a good feature set.",
   openGraph: {
-    siteName: "Scira MCP Chat",
-    url: "https://mcp.scira.ai",
+    siteName: "goodboy.chat",
+    url: "https://goodboy.chat",
     images: [
       {
-        url: "https://mcp.scira.ai/opengraph-image.png",
+        url: "https://goodboy.chat/opengraph-image.png",
         width: 1200,
         height: 630,
       },
@@ -26,9 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Scira MCP Chat",
-    description: "Scira MCP Chat is a minimalistic MCP client with a good feature set.",
-    images: ["https://mcp.scira.ai/twitter-image.png"],
+    title: "goodboy.chat",
+    description: "goodboy.chat is a minimalistic MCP client with a good feature set.",
+    images: ["https://goodboy.chat/twitter-image.png"],
   },
 };
 
@@ -39,7 +40,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className}`}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap"
+        />
+      </head>
+      <body className={noto.className} style={{ fontFamily: "'Noto Sans', 'IBM Plex Sans Thai', 'IBM Plex Sans', sans-serif" }}>
         <Providers>
           <div className="flex h-dvh w-full">
             <ChatSidebar />

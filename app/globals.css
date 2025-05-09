@@ -5,40 +5,64 @@
 @custom-variant dark (&:is(.dark *));
 @custom-variant sunset (&:is(.sunset *));
 @custom-variant black (&:is(.black *));
+@custom-variant nordic-minimal (&:is(.nordic-minimal *));
 
 :root {
-  --background: oklch(0.99 0.01 56.32);
-  --foreground: oklch(0.34 0.01 2.77);
-  --card: oklch(1.00 0 0);
-  --card-foreground: oklch(0.34 0.01 2.77);
-  --popover: oklch(1.00 0 0);
-  --popover-foreground: oklch(0.34 0.01 2.77);
-  --primary: oklch(0.74 0.16 34.71);
-  --primary-foreground: oklch(1.00 0 0);
-  --secondary: oklch(0.96 0.02 28.90);
-  --secondary-foreground: oklch(0.56 0.13 32.74);
-  --muted: oklch(0.97 0.02 39.40);
-  --muted-foreground: oklch(0.49 0.05 26.45);
-  --accent: oklch(0.83 0.11 58.00);
-  --accent-foreground: oklch(0.34 0.01 2.77);
-  --destructive: oklch(0.61 0.21 22.24);
-  --destructive-foreground: oklch(1.00 0 0);
-  --border: oklch(0.93 0.04 38.69);
-  --input: oklch(0.93 0.04 38.69);
-  --ring: oklch(0.74 0.16 34.71);
-  --chart-1: oklch(0.74 0.16 34.71);
-  --chart-2: oklch(0.83 0.11 58.00);
-  --chart-3: oklch(0.88 0.08 54.93);
-  --chart-4: oklch(0.82 0.11 40.89);
-  --chart-5: oklch(0.64 0.13 32.07);
-  --sidebar: oklch(0.97 0.02 39.40);
-  --sidebar-foreground: oklch(0.34 0.01 2.77);
-  --sidebar-primary: oklch(0.74 0.16 34.71);
-  --sidebar-primary-foreground: oklch(1.00 0 0);
-  --sidebar-accent: oklch(0.83 0.11 58.00);
-  --sidebar-accent-foreground: oklch(0.34 0.01 2.77);
-  --sidebar-border: oklch(0.93 0.04 38.69);
-  --sidebar-ring: oklch(0.74 0.16 34.71);
+  /* --- Neutral Core - Versatile Light Theme --- */
+
+  /* Backgrounds & Foregrounds */
+  --background: oklch(0.98 0.005 240); /* Very light, slightly cool gray */
+  --foreground: oklch(0.20 0.005 240); /* Dark, slightly cool gray for text */
+  
+  --card: oklch(1.00 0 0);             /* Pure white */
+  --card-foreground: oklch(0.20 0.005 240); /* Same as main foreground */
+  
+  --popover: oklch(1.00 0 0);           /* Pure white */
+  --popover-foreground: oklch(0.20 0.005 240);/* Same as main foreground */
+
+  /* Primary Colors (e.g., buttons, active links) */
+  --primary: oklch(0.60 0.12 250);    /* Muted, classic blue */
+  --primary-foreground: oklch(0.98 0.005 250); /* Very light, almost white, for text on primary */
+
+  /* Secondary Colors (e.g., less important buttons, subtle highlights) */
+  --secondary: oklch(0.94 0.01 240);   /* Lighter cool gray */
+  --secondary-foreground: oklch(0.30 0.01 250); /* Darker blue-gray for text on secondary */
+
+  /* Muted Colors (e.g., placeholder text, subtle borders) */
+  --muted: oklch(0.96 0.005 240);     /* Very light cool gray, slightly darker than background */
+  --muted-foreground: oklch(0.45 0.01 240); /* Medium cool gray for less prominent text */
+
+  /* Accent Colors (e.g., highlights, focus indicators if not primary) */
+  --accent: oklch(0.70 0.10 200);     /* Desaturated cyan/teal as an accent */
+  --accent-foreground: oklch(0.15 0.005 200); /* Dark, slightly cool gray for text on accent */
+
+  /* Destructive Colors (e.g., delete buttons, error states) */
+  --destructive: oklch(0.58 0.18 25);  /* Desaturated, classic red for warnings */
+  --destructive-foreground: oklch(0.98 0.005 25);/* Very light, for text on destructive */
+
+  /* Borders & Inputs */
+  --border: oklch(0.90 0.01 240);     /* Light cool gray for borders */
+  --input: oklch(0.90 0.01 240);      /* Light cool gray for input backgrounds (if different from card) */
+  --ring: oklch(0.60 0.15 250 / 0.6); /* Primary color with some transparency for focus rings */
+
+  /* Chart Colors - A neutral palette */
+  --chart-1: oklch(0.60 0.12 250);    /* Muted Blue (Primary) */
+  --chart-2: oklch(0.70 0.10 200);    /* Desaturated Cyan/Teal (Accent) */
+  --chart-3: oklch(0.65 0.08 150);    /* Desaturated Green */
+  --chart-4: oklch(0.70 0.10 50);     /* Desaturated Yellow/Orange */
+  --chart-5: oklch(0.55 0.08 300);    /* Desaturated Purple/Magenta */
+
+  /* Sidebar Specific (can often inherit or be slightly different) */
+  --sidebar: oklch(0.96 0.008 240);    /* Slightly darker/different gray than main background */
+  --sidebar-foreground: oklch(0.25 0.005 240); /* Dark gray for sidebar text */
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: oklch(0.88 0.01 240);   /* Slightly darker border for sidebar context */
+  --sidebar-ring: var(--ring);
+
+  /* --- Non-Color Variables (Keep as is) --- */
   --font-sans: Montserrat, sans-serif;
   --font-serif: Merriweather, serif;
   --font-mono: Ubuntu Mono, monospace;
@@ -192,6 +216,81 @@
   --shadow-lg: 0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 4px 6px -4px hsl(0 0% 0% / 0.09);
   --shadow-xl: 0px 6px 12px -3px hsl(0 0% 0% / 0.09), 0px 8px 10px -4px hsl(0 0% 0% / 0.09);
   --shadow-2xl: 0px 6px 12px -3px hsl(0 0% 0% / 0.22);
+}
+
+
+.nordic-minimal {
+  /* --- Nordic Minimal - Clean & Light Aesthetic --- */
+
+  /* Backgrounds & Foregrounds */
+  --background: oklch(0.985 0.003 220); /* Very light, almost white, cool off-white */
+  --foreground: oklch(0.30 0.008 230);  /* Soft, dark cool gray for text */
+  
+  --card: oklch(1.00 0 0);              /* Pure white for cards to stand out slightly */
+  --card-foreground: var(--foreground);
+  
+  --popover: oklch(1.00 0 0);            /* Pure white for popovers */
+  --popover-foreground: var(--foreground);
+
+  /* Primary Colors (e.g., buttons, active links) - Muted & Cool */
+  --primary: oklch(0.68 0.07 215);     /* Muted, dusty light blue */
+  --primary-foreground: oklch(0.99 0.002 215); /* Very light, near-white for text on primary */
+
+  /* Secondary Colors (e.g., less important buttons, subtle highlights) */
+  --secondary: oklch(0.94 0.005 220);    /* Very light cool gray, slightly darker than background */
+  --secondary-foreground: oklch(0.40 0.01 225); /* Medium-dark cool gray for text */
+
+  /* Muted Colors (e.g., placeholder text, subtle dividers) */
+  --muted: oklch(0.96 0.004 220);      /* Extremely light cool gray */
+  --muted-foreground: oklch(0.55 0.01 225);  /* Lighter medium cool gray for subtle text */
+
+  /* Accent Colors (e.g., highlights, focus indicators) - Very Subtle */
+  --accent: oklch(0.75 0.05 190);      /* Very desaturated, light teal/cyan */
+  --accent-foreground: oklch(0.25 0.008 190); /* Darker teal/cyan for text on accent */
+
+  /* Destructive Colors (e.g., delete buttons, error states) - Clear but not jarring */
+  --destructive: oklch(0.65 0.15 15);   /* Muted, slightly desaturated soft red */
+  --destructive-foreground: oklch(0.99 0.002 15); /* Very light for text on destructive */
+
+  /* Borders & Inputs */
+  --border: oklch(0.91 0.006 220);      /* Light cool gray for borders, visible but soft */
+  --input: oklch(0.97 0.004 220);       /* Input background, very close to main bg or card */
+  --ring: oklch(from var(--primary) l c h / 0.5); /* Primary color with transparency for focus */
+
+  /* Chart Colors - Desaturated and harmonious cool tones */
+  --chart-1: var(--primary);                 /* Dusty Light Blue */
+  --chart-2: var(--accent);                  /* Desaturated Light Teal */
+  --chart-3: oklch(0.70 0.06 250);     /* Muted Lavender */
+  --chart-4: oklch(0.78 0.04 160);     /* Pale Mint Green */
+  --chart-5: oklch(0.62 0.05 230);     /* Another Muted Blue/Gray */
+
+  /* Sidebar Specific (can inherit or be subtly different) */
+  --sidebar: oklch(0.97 0.004 220);     /* Very similar to main background, or slightly distinct */
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: oklch(0.89 0.007 220);    /* Slightly more visible border for sidebar */
+  --sidebar-ring: var(--ring);
+
+  /* --- Non-Color Variables (Inherited from :root or can be overridden if needed) --- */
+  /* These are generally fine for a minimal theme, but could be tweaked if desired,
+     e.g., a slightly smaller radius or more subtle shadows for extreme minimalism. */
+  --font-sans: Montserrat, sans-serif; /* Or a more geometric sans-serif like Inter, Open Sans */
+  --font-serif: Merriweather, serif;
+  --font-mono: Ubuntu Mono, monospace;
+  --radius: 0.5rem; /* Potentially slightly smaller radius for a sharper look */
+  
+  /* Shadows can be made even more subtle for minimalism */
+  --shadow-2xs: 0px 2px 4px -2px hsl(220 10% 50% / 0.03);
+  --shadow-xs:  0px 3px 6px -3px hsl(220 10% 50% / 0.04);
+  --shadow-sm:  0px 4px 8px -2px hsl(220 10% 50% / 0.05), 0px 1px 2px -1px hsl(220 10% 50% / 0.05);
+  --shadow:     0px 6px 12px -3px hsl(220 10% 50% / 0.06), 0px 2px 4px -2px hsl(220 10% 50% / 0.06);
+  --shadow-md:  0px 8px 16px -4px hsl(220 10% 50% / 0.07), 0px 3px 6px -3px hsl(220 10% 50% / 0.07);
+  --shadow-lg:  0px 12px 24px -6px hsl(220 10% 50% / 0.08), 0px 4px 8px -4px hsl(220 10% 50% / 0.08);
+  --shadow-xl:  0px 16px 32px -8px hsl(220 10% 50% / 0.09), 0px 6px 12px -6px hsl(220 10% 50% / 0.09);
+  --shadow-2xl: 0px 24px 48px -12px hsl(220 10% 50% / 0.12);
 }
 
 @theme inline {
